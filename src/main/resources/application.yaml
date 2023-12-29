@@ -1,0 +1,36 @@
+debug: false
+    
+spring:
+  datasource:
+    hikari:
+      maximum-pool-size: 20
+    url: jdbc:mysql://211.45.170.92:3306/gympass
+    username: brand13
+    password: kind0314
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # url: jdbc:h2:mem:mydb
+    # username: pass_local
+    ## password: passlocal  
+    # driver-class-name: org.h2.Driver 
+  jpa:
+    database: mysql
+    defer-datasource-initialization: true
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      # ddl-auto: update #data.sql? ????? ???.
+      show-sql: true
+      properties:
+        hibernate.format_sql: true
+        hibernate.default_batch_fetch_size: 100 # 최대 100개의 bulk로 select
+  h2:
+    console:
+      enabled: false
+    # sql:
+    #   init:
+    #     mode: always # data.sql ??? ?? ??? ???(embeded: ??????.. Always: ???)
+  output:
+    ansi:
+      enabled: always 
+#   batch:
+#     jdbc:
+#       initialize-schema: always
